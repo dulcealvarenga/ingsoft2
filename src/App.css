@@ -1,17 +1,71 @@
 /* src/components/App.css */
-
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .app-header {
   background-color: #282c34;
   color: white;
   padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.app-header.menu {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+}
+
+.app-header.centered {
+  justify-content: center; /* Alinea al centro */
+} 
+
+.app-header.left-aligned {
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left h1 {
+  margin: 0 0 0 10px; /* Espacio entre el ícono y el título */
+}
+
+.user-session {
+  position: absolute;
+  right: 20px; /* Alinea el ícono y botón a la derecha */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el ícono y el botón */
+}
+
+.user-session i {
+  font-size: 2rem; /* Tamaño del ícono */
+}
+
+.user-session button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.user-session button:hover {
+  text-decoration: underline;
 }
 
 .app-main {
@@ -26,10 +80,6 @@
   color: white;
   padding: 10px;
   text-align: center;
-}
-
-h1 {
-  margin: 0;
 }
 
 p {

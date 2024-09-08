@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';  // Importar los estilos
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate(); // Crear instancia de useNavigate
+
+  const validUsername = 'is2';
+  const validPassword = '1234';
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Usuario:', username, 'Contraseña:', password);
+    if (username === validUsername && password === validPassword) {
+      onLogin();  // Llama a la función que cambia el estado de autenticación en App.js
+      navigate('/menu'); // Redirigir al usuario a la página de Menu
+    } else {
+      setErrorMessage('Usuario o contraseña incorrectos', errorMessage);
+    }
   };
 
   useEffect(() => {

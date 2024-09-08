@@ -1,0 +1,49 @@
+/* Estilos para el componente Menu */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .menu-header {
+    background-color: #282c34;
+    color: white;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .menu-header h1 {
+    margin: 0;
+    font-size: 1.5rem; /* Tamaño del título */
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-left h1 {
+    margin: 0 0 0 10px; /* Espacio entre el ícono y el título */
+  }
+  
+  .menu-main {
+    flex: 1;
+    padding: 100px;
+    background-color: #f0f0f0;
+    text-align: center; /* Centra el contenido principal */
+  }
+  
+  p {
+    margin: 0;
+  }
+
+  .menu-image {
+    margin-top: 1px; /* Espacio arriba de la imagen */
+    max-width: 100%;   /* Ajusta la imagen para que no se desborde del contenedor */
+    height: auto;      /* Mantiene la proporción de la imagen */
+  }
+  

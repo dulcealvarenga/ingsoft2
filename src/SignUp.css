@@ -5,8 +5,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 72vh;
+    height: 75vh;
     background-color: #f0f2f5;
+    font-family: 'Poppins', sans-serif;
   }
   
   .signup-form {
