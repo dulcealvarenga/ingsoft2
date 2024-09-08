@@ -15,7 +15,7 @@ function SignUp() {
   return (
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
-      <h2>Registrese</h2>
+      <h2>Registro</h2>
         <label htmlFor="email">Correo electrónico</label>
         <input
           type="email"

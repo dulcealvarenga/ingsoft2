@@ -13,7 +13,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Iniciar Sesión</h2>
+        <h2>Iniciar Sesion</h2>
         <label htmlFor="username">Usuario</label>
         <input
           type="text"
