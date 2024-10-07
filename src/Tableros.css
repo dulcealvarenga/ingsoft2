@@ -1,0 +1,268 @@
+.tableros-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tableros-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0a0c1d 0%, #2d4b8b 100%);
+  color: white;
+  padding: 10px;
+}
+
+.tableros-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.list-container {
+  display: flex;
+  justify-content: flex-start; /* Alinación a la izquierda por defecto */
+  gap: 20px; /* Ajusta la distancia entre las listas */
+  width: 100%;
+}
+
+.list {
+  position: relative;
+  width: 200px; /* Ancho de la lista o del contenedor */
+  height: 300px; /* Altura de la lista o del contenedor */
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.add-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  padding: 2px 8px; /* Reduce el tamaño del padding */
+  background-color: #e0e0e0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.1rem; /* Reduce el tamaño de la fuente */
+}
+
+.add-list button {
+  font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+  color: #555; /* Color del texto */
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Alinea el ícono y el texto verticalmente */
+}
+
+.add-list:hover {
+  background-color: #ccc; /* Color al hacer hover */
+}
+
+.tableros-footer {
+  background: linear-gradient(90deg, #000 0%, #2d4b8b 100%);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  margin-block: 0px;
+}
+
+.user-icon {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Estilo para los tres puntitos */
+.options-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: -43px;
+  right: 10px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.options-button:hover {
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Estilo del menú desplegable */
+.options-menu-container {
+  position: relative;
+}
+
+.options-menu {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background-color: #ce2424;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: -1 px;
+}
+
+.options-menu button {
+  position: absolute;
+  top: 0px; /* Ajusta según tu preferencia */
+  right: -50px; /* Ajusta según tu preferencia */
+  background-color: #e71c1c;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.options-menu button:hover {
+  background-color: #ff7f7f;
+  transform: scale(1.05);
+}
+
+.add-list {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.add-list input {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #646464;
+}
+
+.add-list button {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #555;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-list button:hover {
+  background-color: #d4d4d4;
+}
+
+.add-list button i {
+  font-size: 18px;
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.add-list button:focus {
+  outline: none;
+}
+
+.add-list-form {
+  display: flex;
+  flex-direction: column; /* Cambiar para que los elementos estén en columna */
+  gap: 10px;
+  background-color: #e0e0e0; /* Fondo oscuro para que resalte */
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 300px; /* Ajusta el ancho máximo */
+}
+
+.add-list-form input {
+  padding: 8px;
+  border: 1px solid #9e9c9c;
+  border-radius: 5px;
+  color: black;
+  background-color: #e0e0e0;
+}
+
+.add-list-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-list-buttons button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-list-buttons button:first-child {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}
+
+.add-list-buttons button:last-child {
+  background-color: #ff4c4c;
+  color: #fff;
+  border: none;
+}
+
+.add-list-buttons button:hover {
+  opacity: 0.8;
+}
+
+.tablero-solapa {
+  background: linear-gradient(90deg, #0a0c1d 0%, #2d4b8b 100%); /* Color de fondo con degradado */
+  color: white; /* Color del texto */
+  padding: 15px 50px; /* Espaciado interno de la solapa */
+  border-radius: 0px 0px 50px 50px; /* Bordes redondeados en la parte inferior izquierda y derecha */
+  width: 200px; /* Ancho de la solapa */
+  text-align: center; /* Centrar el texto */
+  position: relative; /* Para ajustar la posición según el contenedor */
+  top: 0px; /* Ajusta la posición vertical */
+  font-size: 1.05rem; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita */
+}
+
+
+.tableros-image {
+  margin-top: 1px; /* Espacio arriba de la imagen */
+  max-width: 100%;   /* Ajusta la imagen para que no se desborde del contenedor */
+  height: auto;      /* Mantiene la proporción de la imagen */
+}
+
+.tableros-header .logo {
+  margin-right: auto; /* Esto coloca el logo a la izquierda y el resto a la derecha */
+}
+
+.tableros-header .logo-img {
+  width: 50px;
+  height: 50px;
+}
+
+.create-board-icon {
+  position: absolute;
+  top: 0px; /* Ajusta según tu preferencia */
+  left: 0px; /* Ajusta según tu preferencia */
+}
+
+.create-icon {
+  width: 125px; /* Tamaño del ícono */
+  height: auto;
+  cursor: pointer;
+}

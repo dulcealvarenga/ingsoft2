@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';  // Importar los estilos
 
+
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -40,29 +41,35 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h2>Iniciar Sesion</h2>
-        <label htmlFor="username">Usuario</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <label htmlFor="password">Contraseña</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Ingresar</button>
-      </form>
-      <div id="google-sign-in-button"></div>
-      <div className="signup-link">
-        <p>¿No tienes una cuenta? <a href="/signup">Regístrate aquí</a></p>
+      <div className="left-side">
+        <h1 className="title">TaskFlow</h1>
+        <img src="/img2cohete.png" alt="Cohete" className="rocket-image" />
+      </div>
+      <div className="right-side">
+        <form className="login-form" onSubmit={handleSubmit}>
+          <h2>Iniciar Sesion</h2>
+          <label htmlFor="username">Usuario</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <label htmlFor="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Ingresar</button>
+        </form>
+        <div className="signup-link">
+          <p>¿No tienes una cuenta? <a href="/signup">Regístrate aquí</a></p>
+        </div>
+        <div id="google-sign-in-button" className="google-sso"></div>
       </div>
     </div>
   );
