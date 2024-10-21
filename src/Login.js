@@ -17,7 +17,7 @@ const Login = ({ onLogin }) => {
     console.log('Usuario:', username, 'Contraseña:', password);
     if (username === validUsername && password === validPassword) {
       onLogin();  // Llama a la función que cambia el estado de autenticación en App.js
-      navigate('/menu'); // Redirigir al usuario a la página de Menu
+      navigate('/workspace'); // Redirigir al usuario a la página de Workspace
     } else {
       setErrorMessage('Usuario o contraseña incorrectos', errorMessage);
     }

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import './Menu.css';  // Importar los estilos
+import { useNavigate } from 'react-router-dom';
+import './Workspace.css';  // Importar los estilos
 
-const Menu = ({ onLogout }) => {
+const Workspace = ({ onLogout }) => {
 
     const navigate = useNavigate();
-    const { title } = useParams(); // Obtener el título del workspace desde la URL
     const [showForm, setShowForm] = useState(false);
     const [boards, setBoards] = useState([]);  // Almacena los tableros creados
     const maxBoards = 9; // Máximo número de tableros permitidos
     const [errorMessage, setErrorMessage] = useState(""); // Estado para el mensaje de error
+    const [visibility, setVisibility] = useState('Pública'); // Estado para la visibilidad
     const gradients = [
       'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)', // Lila a azul
       'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)', // Celeste a azul
@@ -52,14 +52,14 @@ const Menu = ({ onLogout }) => {
 
       if (boardTitle) {
         const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
-        const newBoard = { title: boardTitle, color: randomGradient }; // Agrega el color al tablero
+        const newBoard = { title: boardTitle, visibility, color: randomGradient }; // Agrega el color al tablero
         setBoards([...boards, newBoard]); // Agregar el nuevo tablero al estado
         setShowForm(false); // Cerrar el formulario
       }
     };
 
     const handleBoardClick = (title) => {
-      navigate(`/tableros/${title}`);
+      navigate(`/menu/${title}`);
     };
 
     // Función para eliminar un tablero
@@ -76,12 +76,12 @@ const Menu = ({ onLogout }) => {
     };
 
   return (
-    <div className="menu-container">
-      <header className="menu-header">
+    <div className="workspace-container">
+      <header className="workspace-header">
         <div className="create-board-icon" onClick={handleCreateBoardClick}>
           <div className="tooltip">
-            <img src="/img10_Crea_Tablero.png" alt="Crear Tablero" className="create-icon" />
-            <span className="tooltiptext">Crear un nuevo tablero</span>
+            <img src="img6_Crea_Workspace.png" alt="Crear Workspace" className="create-icon" />
+            <span className="tooltiptext">Crear un nuevo Workspace</span>
           </div>
         </div>
         <h1>TaskFlow</h1>
@@ -90,8 +90,7 @@ const Menu = ({ onLogout }) => {
           <button onClick={onLogout}>Cerrar Sesión</button>
         </div>
       </header>
-      <main className="menu-main">
-      <h2 className="workspace-title">{title}</h2>
+      <main className="workspace-main">
         {errorMessage && (
           <div className="error-message">
             <span>{errorMessage}</span>
@@ -100,12 +99,12 @@ const Menu = ({ onLogout }) => {
         )}
         {/* Verificamos si hay al menos un tablero, y si es así, mostramos el título */}
         {boards.length > 0 && (
-            <h2 className="workspace-title">Mis Tableros</h2>
+            <h2 className="workspace-title">Mis espacios de trabajo</h2>
         )}
         {(boards.length === 0 && !showForm) ||  boards.length === 0 ? (
           <div>
-            <img src="/img9_Workspace.png" alt="No se encuentran Tableros" className="menu-image" />
-            <p>Crea tu primer tablero :)</p>
+            <img src="/img1.png" alt="No se encuentran Workspaces" className="workspace-image" />
+            <p>No cuentas con ningún espacio de trabajo ahora mismo :(</p>
           </div>
         ) : (
           <div className="board-list">
@@ -130,24 +129,35 @@ const Menu = ({ onLogout }) => {
           <div className="form-container">
             <div className="form-header">
               <i className="fas fa-arrow-left" onClick={handleCloseForm}></i>
-              <h2>Crear Tablero</h2>
+              <h2>Crear Workspace</h2>
               <span className="close-form" onClick={handleCloseForm}>&times;</span>
             </div>
             <div className="form-image-container">
-              <img src="/img7_Tablero_Default.png" alt="Ejemplo de Tablero" />
+              <img src="img7_Tablero_Default.png" alt="Ejemplo de Tablero" />
             </div>
             <div className="form-group">
-              <label htmlFor="boardTitle">Título del Tablero</label>
+              <label htmlFor="boardTitle">Nombre del Workspace</label>
               <input 
                 type="text" 
                 id="boardTitle" 
                 name="boardTitle" 
-                placeholder="Es necesario colocar un título"
                 className="input-field" 
                 onKeyPress={(e) => {
                   if (e.key === 'Enter') handleCreateBoard(e.target.value);
                 }}
               />
+              <label htmlFor="visibility">Visibilidad</label>
+                <select
+                    id="visibility"
+                    name="visibility"
+                    className="input-field"
+                    value={visibility}
+                    onChange={(e) => setVisibility(e.target.value)}
+                >
+                    <option value="Pública">Pública</option>
+                    <option value="Privada">Privada</option>
+                    <option value="Protegida">Protegida</option>
+                </select>
             </div>
             <button 
               className="create-board-button" 
@@ -157,11 +167,11 @@ const Menu = ({ onLogout }) => {
           </div>
         </div>
       )}
-      <footer className="menu-footer">
+      <footer className="workspace-footer">
         <p>© TaskFlow - 2024</p>
       </footer>
     </div>
   );
 };
 
-export default Menu;
+export default Workspace;

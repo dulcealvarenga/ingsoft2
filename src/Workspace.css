@@ -5,8 +5,8 @@ html, body {
   overflow: hidden;
 }
 
-/* Estilos para el componente Menu */
-.menu-container {
+/* Estilos para el componente workspace */
+.workspace-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -15,7 +15,7 @@ html, body {
     font-family: 'Poppins', sans-serif;
   }
   
-  .menu-header {
+  .workspace-header {
     background-color: transparent;
     padding: 20px;
     display: flex;
@@ -26,7 +26,7 @@ html, body {
     /*position: relative;*/
   }
   
-  .menu-header h1 {
+  .workspace-header h1 {
     font-size: 2rem;
     font-weight: bold;
     color: #000;
@@ -44,7 +44,7 @@ html, body {
     margin: 0 0 0 10px; /* Espacio entre el ícono y el título */
   }
   
-  .menu-main {
+  .workspace-main {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@ html, body {
     /*background-color: #f0f0f0;*/
   }
 
-  .menu-main p {
+  .workspace-main p {
     font-size: 1.2rem;
     color: #666;
     margin-top: 20px;
@@ -65,22 +65,22 @@ html, body {
     margin: 0;
   }
 
-  .menu-image {
+  .workspace-image {
     margin-top: 1px; /* Espacio arriba de la imagen */
     max-width: 100%;   /* Ajusta la imagen para que no se desborde del contenedor */
-    height: 250px;      /* Mantiene la proporción de la imagen */
+    height: 3auto;      /* Mantiene la proporción de la imagen */
   }
 
-  .menu-header .logo {
+  .workspace-header .logo {
     margin-right: auto; /* Esto coloca el logo a la izquierda y el resto a la derecha */
   }
 
-  .menu-header .logo-img {
+  .workspace-header .logo-img {
     width: 50px;
     height: 50px;
   }
 
-  .menu-footer {
+  .workspace-footer {
     background: linear-gradient(90deg, #000 0%, #2d4b8b 100%);
     color: white;
     padding: 10px;
@@ -278,6 +278,16 @@ label {
   width: 100%;
   font-size: 1rem;
   box-sizing: border-box;
+  outline: none;
+}
+
+select.input-field {
+  appearance: none; /* Para que el select tenga estilo personalizado */
+  background-color: white; /* Fondo blanco para que sea consistente con el input */
+  -webkit-appearance: none; /* Para Safari */
+  -moz-appearance: none; /* Para Firefox */
+  padding-right: 10px; /* Espacio para la flecha del select */
+  border-radius: 20px; /* Borde redondeado */
 }
 
 .board-list {
@@ -358,12 +368,3 @@ label {
   cursor: pointer;
 }
 
-.workspace-title {
-  font-size: 2rem; /* Ajusta el tamaño del texto */
-  font-weight: bold; /* Hacer que el título sea en negrita */
-  color: #000; /* Color del texto */
-  text-align: left;
-  margin-left: 20px; /* Agregar un poco de espacio a la izquierda */
-  margin-top: -60px; /* Elevar un poco el título */
-  padding: 10px 0; /* Añadir algo de padding en la parte superior e inferior */
-}
