@@ -367,3 +367,30 @@ label {
   margin-top: -60px; /* Elevar un poco el título */
   padding: 10px 0; /* Añadir algo de padding en la parte superior e inferior */
 }
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(49, 49, 141) !important; /* color de fondo para el avatar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Cambié el color de texto a blanco para mayor contraste */
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+  .user-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .user-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }

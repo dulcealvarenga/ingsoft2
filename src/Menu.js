@@ -34,8 +34,24 @@ const Menu = ({ onLogout }) => {
     
         return () => clearTimeout(timer); // Limpiar el temporizador si el componente se desmonta o si cambia el estado
       }
-    }, [errorMessage]);    
+    }, [errorMessage]);  
+    
+  const [workspace, setWorkspace] = useState({
+      nombre: "Arqui Web",
+      usuarios: [
+        { nombre: "AGONZALEZ", avatar: null }, // Avatar puede ser null para usar iniciales
+        { nombre: "DALVAREM", avatar: null },
+        // Agrega más usuarios aquí
+      ]
+    });
 
+  const getInitials = (nombre) => {
+      return nombre
+        .split(" ")
+        .map((n) => n[0])
+        .join("");
+  };
+    
     const handleCreateBoardClick = () => {
       setShowForm(true); // Mostrar el formulario
     };
@@ -84,11 +100,23 @@ const Menu = ({ onLogout }) => {
             <span className="tooltiptext">Crear un nuevo tablero</span>
           </div>
         </div>
+        <div className="user-container">
+            {workspace.usuarios.map((usuario, index) => (
+                <div key={index} className="user-icon" title={usuario.nombre}>
+                {usuario.avatar ? (
+                    <img src={usuario.avatar} alt={usuario.nombre} className="user-avatar" />
+                ) : (
+                    getInitials(usuario.nombre)
+                )}
+                </div>
+            ))}
+        </div>
         <h1>TaskFlow</h1>
         <div className="user-session">
           <i className="fas fa-user-circle"></i>
           <button onClick={onLogout}>Cerrar Sesión</button>
         </div>
+        
       </header>
       <main className="menu-main">
       <h2 className="workspace-title">{title}</h2>

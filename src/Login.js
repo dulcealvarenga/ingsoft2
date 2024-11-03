@@ -23,6 +23,44 @@ const Login = ({ onLogin }) => {
     }
   };
 
+  /*const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:8000/api/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
+  
+      const data = await response.json();  // Capturar la respuesta del backend
+  
+      if (response.ok) {
+        // Login exitoso
+        console.log('Login exitoso:', data);
+        // Almacenar en el localStorage
+        localStorage.setItem('cod_usuario', data.cod_usuario); // Almacena el cod_usuario
+        localStorage.setItem('nombre', data.nombre); // Almacena el nombre de usuario
+        console.log('cod_usuario:', data.cod_usuario)
+        console.log('nombre:', data.nombre)
+        onLogin();  // Cambiar el estado de autenticación en App.js
+        navigate('/workspace');  // Redirigir al workspace
+      } else {
+        // Mostrar el mensaje de error si la respuesta no fue exitosa
+        setErrorMessage(data.error || 'Error al iniciar sesión');
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+      setErrorMessage('Ocurrió un error al intentar iniciar sesión.');
+    }
+  }; */
+  
+  
+
   useEffect(() => {
     window.google.accounts.id.initialize({
       client_id: '803348551466-oboa8q0363scjbhe6rp16nakdo999mar.apps.googleusercontent.com',
@@ -47,7 +85,10 @@ const Login = ({ onLogin }) => {
       </div>
       <div className="right-side">
         <form className="login-form" onSubmit={handleSubmit}>
-          <h2>Iniciar Sesion</h2>
+          <h2>Iniciar Sesión</h2>
+  
+          {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Mostrar mensaje de error */}
+          
           <label htmlFor="username">Usuario</label>
           <input
             type="text"
@@ -73,6 +114,7 @@ const Login = ({ onLogin }) => {
       </div>
     </div>
   );
+  
 };
 
 export default Login;

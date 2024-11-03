@@ -223,7 +223,7 @@ html, body {
 }
 
 .form-image-container img {
-  width: 75%;
+  width: 55%;
   border-radius: 10px;
 }
 
@@ -272,11 +272,11 @@ label {
 }
 
 .input-field {
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
   width: 100%;
-  font-size: 1rem;
+  font-size: 14px;
   box-sizing: border-box;
   outline: none;
 }
@@ -367,4 +367,3 @@ select.input-field {
   right: -2px; /* Posición de la 'X' a la derecha del mensaje */
   cursor: pointer;
 }
-

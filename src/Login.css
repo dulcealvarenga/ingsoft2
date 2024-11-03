@@ -133,3 +133,36 @@ html, body {
   max-width: 100%;
   height: auto;
 }
+
+
+.small-button {
+  padding: 10px 20px; /* Tamaño más pequeño */
+  border-radius: 20px; /* Bordes ligeramente menos redondeados */
+  background-color: white;
+  color: black;
+  border: none;
+  font-size: 0.9rem; /* Un poco más pequeño que el botón original */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.small-button:hover {
+  background-color: #c4d6d2;
+}
+
+.success-message {
+  background-color: rgba(255, 255, 255, 0.2); 
+  color: white; 
+  border: 1px solid rgba(255, 255, 255, 0.5); 
+  border-radius: 30px; 
+  padding: 15px; 
+  margin: 20px 0; 
+  font-size: 1.2rem; 
+  text-align: center; 
+  transition: background-color 0.3s ease; 
+}
+
+.success-message:hover {
+  background-color: rgba(255, 255, 255, 0.3); 
+}
+
