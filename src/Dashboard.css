@@ -11,22 +11,24 @@ html, body {
     justify-content: space-between;
     flex-direction: column;
     height: 100vh;
-    background-color: #f8f8f8;
+    background-color: transparent;
     font-family: 'Poppins', sans-serif;
   }
-  
-  .workspace-header {
-    background-color: transparent;
-    padding: 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-    border-bottom: none;
-    /*position: relative;*/
-  }
-  
-  .workspace-header h1 {
+
+.workspace-header {
+  background: transparent; /* Fondo completamente transparente */
+  padding: 0 10px; /* Espaciado horizontal para separar el contenido */
+  height: auto; /* Altura automática según el contenido */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px; /* Espacio entre los elementos dentro del header */
+  border: none; /* Sin bordes */
+  box-shadow: none; /* Sin sombras */
+}
+
+
+.workspace-header h1 {
     font-size: 2rem;
     font-weight: bold;
     color: #000;
@@ -63,21 +65,6 @@ html, body {
   
   p {
     margin: 0;
-  }
-
-  .workspace-image {
-    margin-top: 1px; /* Espacio arriba de la imagen */
-    max-width: 100%;   /* Ajusta la imagen para que no se desborde del contenedor */
-    height: 3auto;      /* Mantiene la proporción de la imagen */
-  }
-
-  .workspace-header .logo {
-    margin-right: auto; /* Esto coloca el logo a la izquierda y el resto a la derecha */
-  }
-
-  .workspace-header .logo-img {
-    width: 50px;
-    height: 50px;
   }
 
   .workspace-footer {

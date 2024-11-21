@@ -105,19 +105,13 @@ const Dashboard = ({ onLogout }) => {
   return (
     <div className="workspace-container">
       <header className="workspace-header">
-        <div className="create-board-icon" onClick={handleBackClick}>
-          <div className="tooltip">
-            <img src="img8_Volver.png" alt="Volver" className="create-icon" />
-            <span className="tooltiptext">Volver</span>
-          </div>
-        </div>
         <h1>TaskFlow</h1>
         <div className="user-session">
           <button onClick={onLogout}>Cerrar Sesión</button>
         </div>
       </header>
       <main className="workspace-main" style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 100px)', marginTop: '100px' }}>
-        <h1 style={{ marginTop: '500px' }}>Tablero de Tareas</h1>
+        <h1 style={{ marginTop: '800px' }}>Tablero de Tareas</h1>
         <p>Última recarga: {lastUpdated}</p>
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
           <div style={{ flex: '1', margin: '10px', overflowY: 'auto', maxHeight: '300px' }}>

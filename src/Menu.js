@@ -41,7 +41,7 @@ const Menu = ({ onLogout }) => {
       usuarios: [
         { nombre: "AGONZALEZ", avatar: null }, // Avatar puede ser null para usar iniciales
         { nombre: "DALVAREM", avatar: null },
-        // Agrega más usuarios aquí
+     /*     { nombre: "AMARTIN", avatar: null } */
       ]
     });
 
@@ -93,36 +93,40 @@ const Menu = ({ onLogout }) => {
 
   return (
     <div className="menu-container">
-      <header className="menu-header">
-        <div className="create-board-icon" onClick={handleCreateBoardClick}>
-          <div className="tooltip">
-            <img src="/img10_Crea_Tablero.png" alt="Crear Tablero" className="create-icon" />
-            <span className="tooltiptext">Crear un nuevo tablero</span>
-          </div>
-        </div>
-        <div className="user-container">
-            {workspace.usuarios.map((usuario, index) => (
-                <div key={index} className="user-icon" title={usuario.nombre}>
-                {usuario.avatar ? (
-                    <img src={usuario.avatar} alt={usuario.nombre} className="user-avatar" />
-                ) : (
-                    getInitials(usuario.nombre)
-                )}
+        <header className="menu-header">
+            <div className="create-board-icon" onClick={handleCreateBoardClick}>
+                <div className="tooltip">
+                    <img src="/img10_Crea_Tablero.png" alt="Crear Tablero" className="create-icon"/>
+                    <span className="tooltiptext">Crear un nuevo tablero</span>
                 </div>
-            ))}
-        </div>
-        <h1>TaskFlow</h1>
-        <div className="user-session">
-          <i className="fas fa-user-circle"></i>
-          <button onClick={onLogout}>Cerrar Sesión</button>
-        </div>
-        
-      </header>
-      <main className="menu-main">
-      <h2 className="workspace-title">{title}</h2>
-        {errorMessage && (
-          <div className="error-message">
-            <span>{errorMessage}</span>
+            </div>
+            <div className="dashboard-button-container">
+                <button className="dashboard-button" onClick={() => navigate('/dashboard')}>
+                    Ir al Dashboard
+                </button>
+            </div>
+            <div className="user-container">
+                {workspace.usuarios.map((usuario, index) => (
+                    <div key={index} className="user-icon" title={usuario.nombre}>
+                        {usuario.avatar ? (
+                            <img src={usuario.avatar} alt={usuario.nombre} className="user-avatar"/>
+                        ) : (
+                            getInitials(usuario.nombre)
+                        )}
+                    </div>
+                ))}
+            </div>
+            <h1>TaskFlow</h1>
+            <div className="user-session">
+                <i className="fas fa-user-circle"></i>
+                <button onClick={onLogout}>Cerrar Sesión</button>
+            </div>
+        </header>
+        <main className="menu-main">
+            <h2 className="workspace-title">{title}</h2>
+            {errorMessage && (
+                <div className="error-message">
+                    <span>{errorMessage}</span>
             <button className="close-error" onClick={() => setErrorMessage("")}></button>
           </div>
         )}

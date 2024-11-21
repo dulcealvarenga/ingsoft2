@@ -367,3 +367,50 @@ select.input-field {
   right: -2px; /* Posición de la 'X' a la derecha del mensaje */
   cursor: pointer;
 }
+
+.users-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.users-input-container input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.add-user-button {
+  background: linear-gradient(90deg, #0a0c1d 0%, #2d4b8b 100%);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.selected-users {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los chips se muevan a la siguiente línea si no hay espacio */
+  gap: 8px; /* Espacio entre chips */
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0; /* Color del chip */
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.user-chip button {
+  background: none;
+  border: none;
+  color: #ff5c5c; /* Color del botón de eliminar */
+  font-size: 16px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+

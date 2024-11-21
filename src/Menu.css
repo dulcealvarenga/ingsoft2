@@ -393,3 +393,28 @@ label {
     border-radius: 50%;
     object-fit: cover;
   }
+
+.dashboard-button-container {
+  position: absolute; /* Posiciona el botón relativo al contenedor */
+  top: 20px; /* Ajusta la posición vertical */
+  left: 150px; /* Ajusta la posición horizontal */
+}
+
+.dashboard-button {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.dashboard-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+}
+
