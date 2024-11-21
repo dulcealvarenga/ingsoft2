@@ -31,7 +31,6 @@ html, body {
     font-weight: bold;
     color: #000;
     margin-right: 20px;
-    margin: 0;
   }
 
   .header-left {
@@ -89,7 +88,7 @@ html, body {
     position: relative;
     width: 100%;
     bottom: 0;
-    margin-block: 0px;
+    margin-block: 0;
 }
 
   .user-session {
@@ -132,8 +131,8 @@ html, body {
 
   .create-board-icon {
     position: absolute;
-    top: 0px; /* Ajusta según tu preferencia */
-    left: 0px; /* Ajusta según tu preferencia */
+    top: 0; /* Ajusta según tu preferencia */
+    left: 0; /* Ajusta según tu preferencia */
   }
   
   .create-icon {
@@ -159,7 +158,7 @@ html, body {
   padding: 5px;
   position: absolute;
   z-index: 11;
-  bottom: 0%; /* Muestra el texto arriba del ícono */
+  bottom: 0; /* Muestra el texto arriba del ícono */
   left: 115%;
   margin-left: -60px; /* Ajusta para centrar el tooltip */
   opacity: 0;

@@ -5,6 +5,7 @@
   justify-content: space-between;
   background-color: #f8f8f8;
   font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 .tableros-header {
@@ -22,10 +23,13 @@
   justify-content: center;
   align-items: flex-start;
   padding: 20px;
+  overflow: hidden;
 }
 
 .list-container {
   display: flex;
+  min-height: 100%; /* Asegura que el contenedor tenga un tamaño mínimo */
+  max-height: 100%; /* Evita que crezca más de lo necesario */
   gap: 20px;
   align-items: flex-start; /* Alinear los elementos en la parte superior */
   overflow-x: auto; /* Habilita el desplazamiento horizontal */
@@ -415,7 +419,7 @@
   font-weight: bold;
   padding-top: 0; /* Asegúrate de que el h2 no tenga padding superior */
   margin-bottom: 0px;
-} 
+}
 
 .tarjeta-contenido {
   display: flex;
@@ -468,7 +472,7 @@
   background-color: #d9d9d9;
   border-radius: 10px;
   padding: 10px;
-  width: 320px; 
+  width: 320px;
   height: auto;
   margin-top: 5px;
 }
@@ -477,7 +481,7 @@
   background-color: #c4c4c4;
   border-radius: 10px;
   padding: 10px;
-  width: 180px; 
+  width: 180px;
   height: auto;
 }
 
@@ -490,7 +494,7 @@
   margin-bottom: 5px;
 }
 
-.detalles input { 
+.detalles input {
   width: auto;
   padding: 5px;
   border: none;
@@ -737,7 +741,7 @@ select.input-field {
 
 .editable-list-name:focus {
   border-color: #6a11cb; /* Cambia el color del borde al hacer clic */
-  
+
 }
 
 .list-name {
@@ -882,3 +886,69 @@ select.input-field {
   gap: 1rem; /* Espacio entre la solapa y los filtros */
   margin-top: 0px;
 }
+
+.subtarea-detalle-container {
+  padding: 20px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+.subtarea-detalle-container h2 {
+  margin-bottom: 15px;
+}
+
+.estado-dropdown,
+.descripcion-container,
+.persona-asignada-container,
+.fecha-vencimiento-container {
+  margin-bottom: 15px;
+}
+
+.estado-dropdown label,
+.descripcion-container label,
+.persona-asignada-container label,
+.fecha-vencimiento-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.estado-dropdown select,
+.descripcion-container textarea,
+.persona-asignada-container select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.descripcion-container textarea {
+  height: 80px;
+  resize: none;
+}
+
+.close-subtarea-modal {
+  background: linear-gradient(90deg, #0a0c1d 0%, #2d4b8b 100%);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.descripcion-container textarea {
+  width: 200px; /* Cambia este valor para ajustar el ancho */
+  height: 60px; /* Cambia este valor para ajustar el alto */
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  resize: none; /* Evita que se redimensione */
+}
+
